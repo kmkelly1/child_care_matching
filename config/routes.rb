@@ -1,4 +1,11 @@
 Rails.application.routes.draw do
+  devise_for :providers
+  # Routes for the Provider resource:
+  # READ
+  get "/providers", :controller => "providers", :action => "index"
+  get "/providers/:id", :controller => "providers", :action => "show"
+
+
   # Routes for the Child resource:
   # CREATE
   get "/children/new", :controller => "children", :action => "new"
