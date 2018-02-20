@@ -21,6 +21,15 @@
       <!-- Label and input for guardian -->
       <input type="hidden" name="guardian" value="<%= current_parent.id %>">
 
+      <!-- Label and input for age -->
+      <div class="form-group">
+        <label for="age" class="control-label">
+          Age
+        </label>
+
+        <input type="text" id="age" name="age" placeholder="Age" class="form-control" value="<%= @child.age %>">
+      </div>
+
       <button class="btn btn-success">
         Create Child
       </button>
