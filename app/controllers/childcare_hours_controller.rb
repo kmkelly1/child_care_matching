@@ -1,6 +1,7 @@
 class ChildcareHoursController < ApplicationController
   def index
-    @childcare_hours = ChildcareHour.page(params[:page]).per(10)
+    @q = ChildcareHour.ransack(params[:q])
+    @childcare_hours = @q.result(:distinct => true).includes(:child, :reservation).page(params[:page]).per(10)
 
     render("childcare_hours/index.html.erb")
   end

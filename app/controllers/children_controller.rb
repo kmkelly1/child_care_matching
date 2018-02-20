@@ -10,7 +10,8 @@ class ChildrenController < ApplicationController
   end
 
   def index
-    @children = Child.page(params[:page]).per(10)
+    @q = Child.ransack(params[:q])
+    @children = @q.result(:distinct => true).includes(:guardian, :childcare_hours).page(params[:page]).per(10)
 
     render("children/index.html.erb")
   end

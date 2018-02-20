@@ -1,6 +1,7 @@
 class AvailableHoursController < ApplicationController
   def index
-    @available_hours = AvailableHour.page(params[:page]).per(10)
+    @q = AvailableHour.ransack(params[:q])
+    @available_hours = @q.result(:distinct => true).includes(:provider, :reservation).page(params[:page]).per(10)
 
     render("available_hours/index.html.erb")
   end
