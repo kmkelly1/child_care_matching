@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Available_hour resource:
+  # CREATE
+  get "/available_hours/new", :controller => "available_hours", :action => "new"
+  post "/create_available_hour", :controller => "available_hours", :action => "create"
+
+  # READ
+  get "/available_hours", :controller => "available_hours", :action => "index"
+  get "/available_hours/:id", :controller => "available_hours", :action => "show"
+
+  # UPDATE
+  get "/available_hours/:id/edit", :controller => "available_hours", :action => "edit"
+  post "/update_available_hour/:id", :controller => "available_hours", :action => "update"
+
+  # DELETE
+  get "/delete_available_hour/:id", :controller => "available_hours", :action => "destroy"
+  #------------------------------
+
   # Routes for the Childcare_hour resource:
   # CREATE
   get "/childcare_hours/new", :controller => "childcare_hours", :action => "new"

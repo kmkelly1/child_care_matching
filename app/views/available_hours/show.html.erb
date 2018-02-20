@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Available Hour #<%= @available_hour.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Provider</dt>
+      <dd><%= @available_hour.provider %></dd>
+
+      <dt>Time</dt>
+      <dd><%= @available_hour.time %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/available_hours" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/available_hours/<%= @available_hour.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_available_hour/<%= @available_hour.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
