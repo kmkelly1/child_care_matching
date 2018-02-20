@@ -19,7 +19,7 @@
       <tr>
         <td><%= reservation.time %></td>
         <td><%= reservation.childcare_hours.child %></td>
-        <td><%= reservation.available_hours %></td>
+        <td><%= reservation.available_hours.provider %></td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
           <a href="/reservations/<%= reservation.id %>/edit" class="btn btn-warning">Edit</a>
