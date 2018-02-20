@@ -24,7 +24,7 @@
           Child
         </label>
 
-        <input type="text" id="child" name="child" placeholder="Child" class="form-control" value="<%= @childcare_hour.child %>">
+        <%= select_tag(:child, options_from_collection_for_select(Child.all, :id, :guardian, @childcare_hour.child), :class => "form-control") %>
       </div>
 
       <!-- Label and input for time -->
