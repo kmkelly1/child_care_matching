@@ -18,7 +18,7 @@
       <% @reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.time %></td>
-        <td><%= reservation.childcare_hours %></td>
+        <td><%= reservation.childcare_hours.child %></td>
         <td><%= reservation.available_hours %></td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
