@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  root :to => "children#index"
   # Routes for the Reservation resource:
   # CREATE
   get "/reservations/new", :controller => "reservations", :action => "new"
