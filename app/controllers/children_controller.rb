@@ -47,8 +47,6 @@ class ChildrenController < ApplicationController
   def update
     @child = Child.find(params[:id])
 
-    @child.guardian = params[:guardian]
-
     save_status = @child.save
 
     if save_status == true
