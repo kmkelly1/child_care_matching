@@ -33,7 +33,7 @@
           Childcare hours
         </label>
 
-        <input type="text" id="childcare_hours" name="childcare_hours" placeholder="Childcare hours" class="form-control" value="<%= @reservation.childcare_hours %>">
+        <%= select_tag(:childcare_hours, options_from_collection_for_select(ChildcareHour.all, :id, :child, @reservation.childcare_hours), :class => "form-control") %>
       </div>
 
       <!-- Label and input for available_hours -->
