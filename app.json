@@ -1,0 +1,1 @@
+{"name":"Child care Matching","repository":"https://github.com/kmkelly1/child_care_matching","env":{"CLOUDINARY_CLOUD_NAME":{"required":true},"CLOUDINARY_API_KEY":{"required":true},"CLOUDINARY_API_SECRET":{"required":true},"ROLLBAR_ACCESS_TOKEN":{"required":true}}}
