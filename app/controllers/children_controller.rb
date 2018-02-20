@@ -10,7 +10,7 @@ class ChildrenController < ApplicationController
   end
 
   def index
-    @children = Child.all
+    @children = Child.page(params[:page]).per(10)
 
     render("children/index.html.erb")
   end

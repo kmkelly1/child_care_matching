@@ -1,6 +1,6 @@
 class ChildcareHoursController < ApplicationController
   def index
-    @childcare_hours = ChildcareHour.all
+    @childcare_hours = ChildcareHour.page(params[:page]).per(10)
 
     render("childcare_hours/index.html.erb")
   end

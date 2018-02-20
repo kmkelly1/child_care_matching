@@ -1,6 +1,6 @@
 class AvailableHoursController < ApplicationController
   def index
-    @available_hours = AvailableHour.all
+    @available_hours = AvailableHour.page(params[:page]).per(10)
 
     render("available_hours/index.html.erb")
   end
