@@ -6,7 +6,13 @@
   <div class="col-md-12 mb-2">
     <dl class="dl-horizontal">
       <dt>Child</dt>
-      <dd><%= @childcare_hour.child %></dd>
+      <dd>
+        <% if @childcare_hour.child.present? %>
+          <a href="/children/<%= @childcare_hour.child %>">
+            <%= @childcare_hour.child.guardian %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Time</dt>
       <dd><%= @childcare_hour.time %></dd>

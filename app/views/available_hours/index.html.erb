@@ -16,7 +16,13 @@
 
       <% @available_hours.each do |available_hour| %>
       <tr>
-        <td><%= available_hour.provider.created_at %></td>
+        <td>
+          <% if available_hour.provider.present? %>
+            <a href="/providers/<%= available_hour.provider.id %>">
+              <%= available_hour.provider.created_at %>
+            </a>
+          <% end %>
+        </td>
         <td><%= available_hour.time %></td>
         <td>
           <a href="/available_hours/<%= available_hour.id %>" class="btn btn-primary">Show</a>

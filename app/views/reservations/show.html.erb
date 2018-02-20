@@ -9,10 +9,22 @@
       <dd><%= @reservation.time %></dd>
 
       <dt>Childcare hours</dt>
-      <dd><%= @reservation.childcare_hours %></dd>
+      <dd>
+        <% if @reservation.childcare_hours.present? %>
+          <a href="/childcare_hours/<%= @reservation.childcare_hours %>">
+            <%= @reservation.childcare_hours.child %>
+          </a>
+        <% end %>
+      </dd>
 
       <dt>Available hours</dt>
-      <dd><%= @reservation.available_hours %></dd>
+      <dd>
+        <% if @reservation.available_hours.present? %>
+          <a href="/available_hours/<%= @reservation.available_hours %>">
+            <%= @reservation.available_hours.provider %>
+          </a>
+        <% end %>
+      </dd>
 
     </dl>
 

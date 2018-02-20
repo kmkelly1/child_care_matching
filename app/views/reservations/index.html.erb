@@ -18,8 +18,20 @@
       <% @reservations.each do |reservation| %>
       <tr>
         <td><%= reservation.time %></td>
-        <td><%= reservation.childcare_hours.child %></td>
-        <td><%= reservation.available_hours.provider %></td>
+        <td>
+          <% if reservation.childcare_hours.present? %>
+            <a href="/childcare_hours/<%= reservation.childcare_hours.id %>">
+              <%= reservation.childcare_hours.child %>
+            </a>
+          <% end %>
+        </td>
+        <td>
+          <% if reservation.available_hours.present? %>
+            <a href="/available_hours/<%= reservation.available_hours.id %>">
+              <%= reservation.available_hours.provider %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/reservations/<%= reservation.id %>" class="btn btn-primary">Show</a>
           <a href="/reservations/<%= reservation.id %>/edit" class="btn btn-warning">Edit</a>

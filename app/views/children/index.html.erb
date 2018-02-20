@@ -15,7 +15,13 @@
 
       <% @children.each do |child| %>
       <tr>
-        <td><%= child.guardian.email %></td>
+        <td>
+          <% if child.guardian.present? %>
+            <a href="/parents/<%= child.guardian.id %>">
+              <%= child.guardian.email %>
+            </a>
+          <% end %>
+        </td>
         <td>
           <a href="/children/<%= child.id %>" class="btn btn-primary">Show</a>
           
