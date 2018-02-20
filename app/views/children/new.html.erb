@@ -24,7 +24,7 @@
           Guardian
         </label>
 
-        <input type="text" id="guardian" name="guardian" placeholder="Guardian" class="form-control" value="<%= @child.guardian %>">
+        <%= select_tag(:guardian, options_from_collection_for_select(Parent.all, :id, :email, @child.guardian), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
