@@ -42,7 +42,7 @@
           Available hours
         </label>
 
-        <input type="text" id="available_hours" name="available_hours" placeholder="Available hours" class="form-control" value="<%= @reservation.available_hours %>">
+        <%= select_tag(:available_hours, options_from_collection_for_select(AvailableHour.all, :id, :provider, @reservation.available_hours), :class => "form-control") %>
       </div>
 
       <button class="btn btn-success">
