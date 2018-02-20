@@ -1,0 +1,37 @@
+<!-- Validation failure messages -->
+<% if @child.errors.any? %>
+  <% @child.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Child #<%= @child.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_child/<%= @child.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for guardian -->
+      <div class="form-group">
+        <label for="guardian" class="control-label">
+          Guardian
+        </label>
+
+        <input type="text" id="guardian" name="guardian" placeholder="Guardian" class="form-control" value="<%= @child.guardian %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Child
+      </button>
+      or
+      <a href="/children/<%= @child.id %>">Cancel</a>
+    </form>
+  </div>
+</div>
