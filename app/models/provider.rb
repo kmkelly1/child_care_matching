@@ -1,6 +1,9 @@
 class Provider < ApplicationRecord
   # Direct associations
 
+  has_many   :available_hours,
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
