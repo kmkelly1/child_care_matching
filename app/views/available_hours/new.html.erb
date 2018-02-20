@@ -24,7 +24,7 @@
           Provider
         </label>
 
-        <input type="text" id="provider" name="provider" placeholder="Provider" class="form-control" value="<%= @available_hour.provider %>">
+        <%= select_tag(:provider, options_from_collection_for_select(Provider.all, :id, :created_at, @available_hour.provider), :class => "form-control") %>
       </div>
 
       <!-- Label and input for time -->
