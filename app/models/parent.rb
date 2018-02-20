@@ -1,6 +1,10 @@
 class Parent < ApplicationRecord
   # Direct associations
 
+  has_many   :children,
+             :foreign_key => "guardian",
+             :dependent => :destroy
+
   # Indirect associations
 
   # Validations
