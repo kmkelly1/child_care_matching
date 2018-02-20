@@ -23,3 +23,34 @@
     </div>
   </div>
 </div>
+
+<!-- A Child has many childcare_hours -->
+
+<div class="row">
+  <div class="col-md-12">
+    <ul class="list-group">
+      <li class="list-group-item list-group-item-info">
+        Childcare Hours
+      </li>
+
+      <% @child.childcare_hours.each do |childcare_hour| %>
+        <li class="list-group-item">
+          <a href="/childcare_hours/<%= childcare_hour.id %>">
+            <%= childcare_hour.child %>
+          </a>
+          <div class="btn-group btn-group-xs pull-right">
+            <a href="/childcare_hours/<%= childcare_hour.id %>" class="btn btn-primary">
+              <i class="fa fa-search-plus"></i>
+            </a>
+            <a href="/childcare_hours/<%= childcare_hour.id %>/edit" class="btn btn-warning">
+              <i class="fa fa-edit"></i>
+            </a>
+            <a href="/delete_childcare_hour/<%= childcare_hour.id %>" class="btn btn-danger" rel="nofollow">
+              <i class="fa fa-trash-o"></i>
+            </a>
+          </div>
+        </li>
+      <% end %>
+    </ul>
+  </div>
+</div>
