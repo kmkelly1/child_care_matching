@@ -33,6 +33,7 @@ class ChildrenController < ApplicationController
     @child = Child.new
 
     @child.guardian = params[:guardian]
+    @child.age = params[:age]
 
     save_status = @child.save
 
@@ -58,6 +59,7 @@ class ChildrenController < ApplicationController
 
   def update
     @child = Child.find(params[:id])
+    @child.age = params[:age]
 
     save_status = @child.save
 

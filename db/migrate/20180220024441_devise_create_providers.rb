@@ -34,6 +34,8 @@ class DeviseCreateProviders < ActiveRecord::Migration[5.0]
 
       t.string :email
       t.string :password
+      t.string :address
+      t.string :age_group
 
       t.timestamps null: false
     end
