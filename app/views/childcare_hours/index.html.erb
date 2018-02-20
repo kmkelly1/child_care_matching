@@ -1,0 +1,30 @@
+<div class="page-header">
+  <h1>
+    Childcare hours
+    <a href="/childcare_hours/new" class="btn btn-lg btn-success">New Childcare hour</a>
+  </h1>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <table class="table table-striped table-hover">
+      <tr>
+        <th>Child</th>
+        <th>Time</th>
+        <th>Actions</th>
+      </tr>
+
+      <% @childcare_hours.each do |childcare_hour| %>
+      <tr>
+        <td><%= childcare_hour.child %></td>
+        <td><%= childcare_hour.time %></td>
+        <td>
+          <a href="/childcare_hours/<%= childcare_hour.id %>" class="btn btn-primary">Show</a>
+          <a href="/childcare_hours/<%= childcare_hour.id %>/edit" class="btn btn-warning">Edit</a>
+          <a href="/delete_childcare_hour/<%= childcare_hour.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+        </td>
+      </tr>
+      <% end %>
+    </table>
+  </div>
+</div>

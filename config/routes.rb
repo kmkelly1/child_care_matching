@@ -1,4 +1,21 @@
 Rails.application.routes.draw do
+  # Routes for the Childcare_hour resource:
+  # CREATE
+  get "/childcare_hours/new", :controller => "childcare_hours", :action => "new"
+  post "/create_childcare_hour", :controller => "childcare_hours", :action => "create"
+
+  # READ
+  get "/childcare_hours", :controller => "childcare_hours", :action => "index"
+  get "/childcare_hours/:id", :controller => "childcare_hours", :action => "show"
+
+  # UPDATE
+  get "/childcare_hours/:id/edit", :controller => "childcare_hours", :action => "edit"
+  post "/update_childcare_hour/:id", :controller => "childcare_hours", :action => "update"
+
+  # DELETE
+  get "/delete_childcare_hour/:id", :controller => "childcare_hours", :action => "destroy"
+  #------------------------------
+
   devise_for :providers
   # Routes for the Provider resource:
   # READ

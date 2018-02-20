@@ -1,0 +1,46 @@
+<!-- Validation failure messages -->
+<% if @childcare_hour.errors.any? %>
+  <% @childcare_hour.errors.full_messages.each do |message| %>
+    <div class="alert alert-dismissable alert-danger">
+      <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+      <%= message %>
+    </div>
+  <% end %>
+<% end %>
+
+<div class="page-header">
+  <h3>Edit Childcare Hour #<%= @childcare_hour.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12">
+    <form action="/update_childcare_hour/<%= @childcare_hour.id %>" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for child -->
+      <div class="form-group">
+        <label for="child" class="control-label">
+          Child
+        </label>
+
+        <input type="text" id="child" name="child" placeholder="Child" class="form-control" value="<%= @childcare_hour.child %>">
+      </div>
+
+      <!-- Label and input for time -->
+      <div class="form-group">
+        <label for="time" class="control-label">
+          Time
+        </label>
+
+        <input type="text" id="time" name="time" placeholder="Time" class="form-control" value="<%= @childcare_hour.time %>">
+      </div>
+
+      <button class="btn btn-warning">
+        Update Childcare Hour
+      </button>
+      or
+      <a href="/childcare_hours/<%= @childcare_hour.id %>">Cancel</a>
+    </form>
+  </div>
+</div>

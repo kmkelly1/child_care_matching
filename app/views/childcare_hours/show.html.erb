@@ -1,0 +1,28 @@
+<div class="page-header">
+  <h3>Childcare Hour #<%= @childcare_hour.id %></h3>
+</div>
+
+<div class="row">
+  <div class="col-md-12 mb-2">
+    <dl class="dl-horizontal">
+      <dt>Child</dt>
+      <dd><%= @childcare_hour.child %></dd>
+
+      <dt>Time</dt>
+      <dd><%= @childcare_hour.time %></dd>
+
+    </dl>
+
+    <div class="btn-group btn-group-justified">
+      <a href="/childcare_hours" class="btn btn-primary">
+        Back
+      </a>
+      <a href="/childcare_hours/<%= @childcare_hour.id %>/edit" class="btn btn-warning">
+        Edit
+      </a>
+      <a href="/delete_childcare_hour/<%= @childcare_hour.id %>" class="btn btn-danger" rel="nofollow">
+        Delete
+      </a>
+    </div>
+  </div>
+</div>
