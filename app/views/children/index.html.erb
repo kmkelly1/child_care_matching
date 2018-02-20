@@ -18,8 +18,11 @@
         <td><%= child.guardian.email %></td>
         <td>
           <a href="/children/<%= child.id %>" class="btn btn-primary">Show</a>
-          <a href="/children/<%= child.id %>/edit" class="btn btn-warning">Edit</a>
-          <a href="/delete_child/<%= child.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          
+          <% if current_parent == child.guardian %>
+            <a href="/children/<%= child.id %>/edit" class="btn btn-warning">Edit</a>
+            <a href="/delete_child/<%= child.id %>" class="btn btn-danger" rel="nofollow">Delete</a>
+          <% end %>
         </td>
       </tr>
       <% end %>

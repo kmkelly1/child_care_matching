@@ -1,4 +1,14 @@
 class ChildrenController < ApplicationController
+  before_action :current_parent_must_be_child_guardian, :only => [:edit, :update, :destroy]
+
+  def current_parent_must_be_child_guardian
+    child = Child.find(params[:id])
+
+    unless current_parent == child.guardian
+      redirect_to :back, :alert => "You are not authorized for that."
+    end
+  end
+
   def index
     @children = Child.all
 

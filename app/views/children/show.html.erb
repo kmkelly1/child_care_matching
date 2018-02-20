@@ -14,12 +14,14 @@
       <a href="/children" class="btn btn-primary">
         Back
       </a>
-      <a href="/children/<%= @child.id %>/edit" class="btn btn-warning">
-        Edit
-      </a>
-      <a href="/delete_child/<%= @child.id %>" class="btn btn-danger" rel="nofollow">
-        Delete
-      </a>
+      <% if current_parent == @child.guardian %>
+        <a href="/children/<%= @child.id %>/edit" class="btn btn-warning">
+          Edit
+        </a>
+        <a href="/delete_child/<%= @child.id %>" class="btn btn-danger" rel="nofollow">
+          Delete
+        </a>
+      <% end %>
     </div>
   </div>
 </div>
