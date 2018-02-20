@@ -16,7 +16,7 @@
 
       <% @childcare_hours.each do |childcare_hour| %>
       <tr>
-        <td><%= childcare_hour.child %></td>
+        <td><%= childcare_hour.child.guardian %></td>
         <td><%= childcare_hour.time %></td>
         <td>
           <a href="/childcare_hours/<%= childcare_hour.id %>" class="btn btn-primary">Show</a>
