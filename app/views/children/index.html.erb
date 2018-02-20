@@ -15,7 +15,7 @@
 
       <% @children.each do |child| %>
       <tr>
-        <td><%= child.guardian %></td>
+        <td><%= child.guardian.email %></td>
         <td>
           <a href="/children/<%= child.id %>" class="btn btn-primary">Show</a>
           <a href="/children/<%= child.id %>/edit" class="btn btn-warning">Edit</a>
