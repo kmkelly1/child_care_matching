@@ -16,6 +16,7 @@ class ChildrenController < ApplicationController
   end
 
   def show
+    @childcare_hour = ChildcareHour.new
     @child = Child.find(params[:id])
 
     render("children/show.html.erb")

@@ -53,6 +53,35 @@
           </div>
         </li>
       <% end %>
+
+      <li class="list-group-item">
+        <form action="/create_childcare_hour" method="post">
+      <!-- Hidden input for authenticity token to protect from forgery -->
+      <input name="authenticity_token" type="hidden" value="<%= form_authenticity_token %>">
+
+      <!-- Label and input for child -->
+      <div class="form-group">
+        <label for="child" class="control-label">
+          Child
+        </label>
+
+        <%= select_tag(:child, options_from_collection_for_select(Child.all, :id, :guardian), :class => "form-control") %>
+      </div>
+
+      <!-- Label and input for time -->
+      <div class="form-group">
+        <label for="time" class="control-label">
+          Time
+        </label>
+
+        <input type="text" id="time" name="time" placeholder="Time" class="form-control" value="">
+      </div>
+
+      <button class="btn btn-block btn-success">
+        Create Childcare Hour
+      </button>
+    </form>
+      </li>
     </ul>
   </div>
 </div>
